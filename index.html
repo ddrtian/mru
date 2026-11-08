@@ -52,7 +52,6 @@
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 .wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .narrow{max-width:800px}
 h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0;font-weight:900}
@@ -103,7 +102,7 @@ summary.btn::-webkit-details-marker{display:none}
 .iconbtn:active{transform:translateY(3px);box-shadow:none}
 
 /* ---------- top bars ---------- */
-.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+.topbar{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
 .topbar .wrap{display:flex;align-items:center;gap:12px;padding-block:10px;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:900;font-size:1.15rem;margin-right:auto;min-width:0}
 .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--blue);color:var(--on-blue);box-shadow:0 3px 0 var(--blue-d);flex:none}
@@ -411,7 +410,7 @@ details.qa .ans{padding:2px 18px 18px 50px}
 .subnav{display:flex;flex-wrap:wrap;gap:8px}
 .subnav a{text-decoration:none;font-weight:800;font-size:.9rem;padding:7px 14px;border-radius:999px;background:var(--blue-l);color:var(--blue)}
 .subnav a:hover{background:var(--blue);color:var(--on-blue)}
-.psec{display:grid;gap:14px;scroll-margin-top:84px}
+.psec{display:grid;gap:14px;scroll-margin-top:calc(84px + env(safe-area-inset-top,0px))}
 
 /* ---------- celebration ---------- */
 .celebrate{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:20px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fadeIn .25s ease}
@@ -431,7 +430,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.9rem;display:grid;g
 footer b{color:var(--ink)}
 .egg{justify-self:end;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:lowercase;color:var(--grey-d);text-decoration:none;opacity:.55;padding:2px 4px;border-radius:6px;transition:opacity .2s ease,color .2s ease}
 .egg:hover,.egg:focus-visible{opacity:1;color:var(--blue)}
-#v-dodatno article.lesson{border-top:2px dashed var(--line);padding-top:26px;scroll-margin-top:84px}
+#v-dodatno article.lesson{border-top:2px dashed var(--line);padding-top:26px;scroll-margin-top:calc(84px + env(safe-area-inset-top,0px))}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
