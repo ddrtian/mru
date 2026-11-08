@@ -2,6 +2,8 @@
 <html lang="sl">
 <head>
 <meta charset="utf-8">
+<meta name="theme-color" content="#ecf3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101c34" media="(prefers-color-scheme: dark)">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MUR 1. kolokvij</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -14,7 +16,7 @@
 /* Layout: an app with one visible view at a time. Home is a winding Duolingo-style path of lesson nodes grouped in units;
    lessons and practice open as focused full views with a sticky progress bar. Chunky rounded surfaces with a 3D bottom edge. */
 :root{
-  --bg:#f4f8ff; --surface:#ffffff; --ink:#13213c; --muted:#5d6d8b; --line:#dbe4f4;
+  --bg:#f4f8ff; --bar:#ecf3ff; --surface:#ffffff; --ink:#13213c; --muted:#5d6d8b; --line:#dbe4f4;
   --blue:#2d7ff9; --blue-d:#1a5fd0; --blue-l:#e4eeff; --sky:#5cc2ff; --on-blue:#ffffff;
   --u1:#2d7ff9; --u1-d:#1a5fd0; --u2:#5563ff; --u2-d:#3a45d6; --u3:#0ea5e9; --u3-d:#0a7fb5; --u4:#1f3f9e; --u4-d:#142b73;
   --grey:#e6ebf4; --grey-d:#c7d0e0; --grey-ink:#9aa7bf;
@@ -30,7 +32,7 @@
   --r:18px; --ease:cubic-bezier(.2,.9,.3,1.2);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0a1222; --surface:#111c33; --ink:#e8eefc; --muted:#94a4c4; --line:#22304f;
+  --bg:#0a1222; --bar:#101c34; --surface:#111c33; --ink:#e8eefc; --muted:#94a4c4; --line:#22304f;
   --blue:#4b92ff; --blue-d:#2c69d6; --blue-l:#16284a; --sky:#6fcaff; --on-blue:#ffffff;
   --u1:#4b92ff; --u1-d:#2c69d6; --u2:#6c78ff; --u2-d:#4a52d9; --u3:#22b2ef; --u3-d:#1385bb; --u4:#3d5fc4; --u4-d:#284497;
   --grey:#1d2a46; --grey-d:#2b3a5c; --grey-ink:#6c7c9c;
@@ -39,7 +41,7 @@
   --bad:#ff7487; --bad-d:#d9506a; --bad-l:#3a1620;
   --c1:#4b92ff; --c2:#ffbf47; --c3:#2dd4bf; --c4:#b08cff; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0a1222; --surface:#111c33; --ink:#e8eefc; --muted:#94a4c4; --line:#22304f;
+  --bg:#0a1222; --bar:#101c34; --surface:#111c33; --ink:#e8eefc; --muted:#94a4c4; --line:#22304f;
   --blue:#4b92ff; --blue-d:#2c69d6; --blue-l:#16284a; --sky:#6fcaff; --on-blue:#ffffff;
   --u1:#4b92ff; --u1-d:#2c69d6; --u2:#6c78ff; --u2-d:#4a52d9; --u3:#22b2ef; --u3-d:#1385bb; --u4:#3d5fc4; --u4-d:#284497;
   --grey:#1d2a46; --grey-d:#2b3a5c; --grey-ink:#6c7c9c;
@@ -102,7 +104,7 @@ summary.btn::-webkit-details-marker{display:none}
 .iconbtn:active{transform:translateY(3px);box-shadow:none}
 
 /* ---------- top bars ---------- */
-.topbar{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+.topbar{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);z-index:20;background:var(--bar);border-bottom:2px solid var(--line)}
 .topbar .wrap{display:flex;align-items:center;gap:12px;padding-block:10px;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:900;font-size:1.15rem;margin-right:auto;min-width:0}
 .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--blue);color:var(--on-blue);box-shadow:0 3px 0 var(--blue-d);flex:none}
